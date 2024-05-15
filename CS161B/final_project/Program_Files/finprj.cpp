@@ -13,6 +13,7 @@
 #include "movie_operations.h"
 #include "tools.h"
 #include <iostream>
+#include <fstream>
 
 using namespace std;
 

@@ -13,7 +13,7 @@ using namespace std;
 //output: messages
 //return: None (void)
 void welcome() {
- cout << "Welcome! This program gives statistical information from the TMDB "
+ cout << "\n\nWelcome! This program gives statistical information from the TMDB "
          "Box Office where movies have been ranked popularity from 1-10, and "
          "average vote of movie. There will also be vote count, and release "            
          "date columns.\n\nYou can Add to the dataset, Print the dataset, "

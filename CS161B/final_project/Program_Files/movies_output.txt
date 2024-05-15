@@ -8,4 +8,4 @@ In His Shadow;2023-03-17;7.5;8
 Still Time;2023-03-16;7;28
 Shazam! Fury of the Gods;2023-03-15;7.54;89
 Barbie;2023-07-21;6.9;4321
-Beetlejuice;1988-03-30;5.4;3555
+Beetlejuice;1988-09-06;5.4;3555
