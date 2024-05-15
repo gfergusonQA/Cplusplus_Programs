@@ -1,0 +1,11 @@
+Everything Everywhere All at Once;2022-03-24;7.928;3873
+John Wick: Chapter 4;2023-03-22;9.094;16
+Cocaine Bear;2023-02-22;6.706;260
+Boston Strangler;2023-03-17;6.7;43
+Noise;2023-03-17;6.1;13
+Scream VI;2023-03-08;7.394;302
+The Whale;2022-12-09;8.07;1384
+In His Shadow;2023-03-17;7.5;8
+Still Time;2023-03-16;7.0;28
+Shazam! Fury of the Gods;2023-03-15;7.54;89
+
