@@ -1,0 +1,321 @@
+This Final Project is a menu-driven program using your own ideas. A menu-driven program is a program that gets input from a user by showing a list of options, known as the menu, from which the user chooses their option. One of the options is to quit and end the program execution. The objective of this project is to demonstrate mastery of the outcomes of this course.  The scope of this project is larger than your individual assignments and typically requires more planning and preparation.
+
+You must use multiple files in your project. Refer to zyBooks, Chapter 14 for more information on how to create multiple files.
+You must have a Remove option in your menu. You must be able to shift and remove an item from your list.
+Must have functions and function prototypes. All functions must be written after main().
+Must have an array of struct and c-strings (no String class, vectors or anything not covered in this class).
+Must do data validation for input read from the user. Users must not be allowed to enter invalid or negative numbers. All options must be validated.
+Must read data from a file. Refer to zyBooks Chapter 12: File Input/Output for more information on how to read data from a file and what kind of data you need to have.
+
+
+Name the file containing the main() function finprj.cpp.
+Menu driven program.
+The program must loop until the user enters QUIT to end the program.
+No breaks or returns inside loops.
+No while(true) loops in your program.
+No global variables.
+Must use structs.
+You must use multiple files in your project. 
+You must have a Remove option in your menu. You must be able to shift and remove an item from your list.
+Must have functions and function prototypes. All functions must be written after main().
+Must have an array of struct and c-strings (no String class, vectors or anything not covered in this class).
+Must do data validation for input read from the user. Users must not be allowed to enter invalid or negative numbers. All options must be validated.
+Must read data from a file. 
+
+============== DATA SET BELOW ======================
+DATASET: Source: TMDB Box Office Secrets 
+Movie_Title | Release_Date | Vote_Average | Vote_Count
+
+Everything Everywhere All at Once;2022-03-24; 7.928;3873
+John Wick: Chapter 4;2023-03-22;9.094;16
+Cocaine Bear;2023-02-22;6.706;260
+Boston Strangler;2023-03-17;6.7;43
+Noise;2023-03-17;6.1;13
+Scream VI;2023-03-08;7.394;302
+The Whale;2022-12-09;8.07;1384
+In His Shadow;2023-03-17;7.5;8
+Still Time;2023-03-16;7.0;28
+Shazam! Fury of the Gods;2023-03-15;7.54;89
+
+========= SAMPLE RUN BELOW ================
+
+Welcome! This program gives statistical information from the TMDB Box Office where movies have been ranked popularity from 1-10, and average vote of movie. There will also be vote count, and release date columns.
+
+You can Add to the dataset, Print the dataset, Find the movie title with the highest rating, or Quit the program.
+
+Pick an option from below:
+
+      (A) DD
+      (R) EMOVE
+      (P) RINT
+      (F) IND
+      (M) AX
+      (Q) UIT
+
+A
+Enter the movie title that you would like to add: Barbie
+Enter the Release Date in YYYY-MM-DD format: 2023-07-21 
+Enter the Vote average (Decimals ok!): 6.9
+Enter the total number of Votes: 4321
+
+Pick an option from below: 
+
+      (A) DD
+      (R) EMOVE
+      (P) RINT
+      (F) IND
+      (M) AX
+      (Q) UIT
+
+P
+
+Movie_Title | Release_Date | Vote_Average | Vote_Count
+
+Everything Everywhere All at Once;2022-03-24; 7.928;3873
+John Wick: Chapter 4;2023-03-22;9.094;16
+Cocaine Bear;2023-02-22;6.706;260
+Boston Strangler;2023-03-17;6.7;43
+Noise;2023-03-17;6.1;13
+Scream VI;2023-03-08;7.394;302
+The Whale;2022-12-09;8.07;1384
+In His Shadow;2023-03-17;7.5;8
+Still Time;2023-03-16;7.0;28
+Shazam! Fury of the Gods;2023-03-15;7.54;89
+Barbie ; 2023-07-21 ; 6.9 ; 4321
+
+Pick an option from below: 
+
+      (A) DD
+      (R) EMOVE
+      (P) RINT
+      (F) IND
+      (M) AX
+      (Q) UIT
+
+F
+Enter the movie title: Cocaine Bear
+
+Here is the information: 
+Cocaine Bear;2023-03-22;9.094;16
+
+Pick an option from below:      
+
+      (A) DD
+      (R) EMOVE
+      (P) RINT
+      (F) IND
+      (M) AX
+      (Q) UIT
+
+a
+Enter the movie title that you would like to add: Beetlejuice
+Enter the Release Date in YYYY-MM-DD format: 1988-09-06 
+Enter the Vote average (Decimals ok!): 5.4
+Enter the total number of Votes: 3555
+
+Pick an option from below:      
+
+      (A) DD
+      (R) EMOVE
+      (P) RINT
+      (F) IND
+      (M) AX
+      (Q) UIT
+
+g
+Invalid option!
+Pick an option from below:      
+
+      (A) DD
+      (R) EMOVE
+      (P) RINT
+      (F) IND
+      (M) AX
+      (Q) UIT
+P
+
+Everything Everywhere All at Once;2022-03-24; 7.928;3873
+John Wick: Chapter 4;2023-03-22;9.094;16
+Cocaine Bear;2023-02-22;6.706;260
+Boston Strangler;2023-03-17;6.7;43
+Noise;2023-03-17;6.1;13
+Scream VI;2023-03-08;7.394;302
+The Whale;2022-12-09;8.07;1384
+In His Shadow;2023-03-17;7.5;8
+Still Time;2023-03-16;7.0;28
+Shazam! Fury of the Gods;2023-03-15;7.54;89
+Barbie;2023-07-21;6.9;4321
+Beetlejuice;1988-09-06;5.4;3555
+
+Pick an option from below:      
+
+      (A) DD
+      (R) EMOVE
+      (P) RINT
+      (F) IND
+      (M) AX
+      (Q) UIT
+
+M
+
+The movie with the highest rating is:
+
+John Wick: Chapter 4 with a rating of 9.094 out of 10.
+
+Pick an option from below:
+
+(A)DD
+(R)EMOVE
+(P)RINT
+(F)IND
+(M)AX
+(Q)UIT
+
+R
+
+Movie_Title | Release_Date | Vote_Average | Vote_Count
+Everything Everywhere All at Once;2022-03-24;7.928;3873
+John Wick: Chapter 4;2023-03-22;9.094;16
+Cocaine Bear;2023-02-22;6.706;260
+Boston Strangler;2023-03-17;6.7;43
+Noise;2023-03-17;6.1;13
+Scream VI;2023-03-08;7.394;302
+The Whale;2022-12-09;8.07;1384
+In His Shadow;2023-03-17;7.5;8
+Still Time;2023-03-16;7.0;28
+Shazam! Fury of the Gods;2023-03-15;7.54;89
+Barbie;2023-07-21;6.9;4321
+Beetlejuice;1988-09-06;5.4;3555
+
+Enter the index of the building to remove: 3
+
+The movie, Boston Strangler, was removed. 
+Here is your new list: 
+
+Movie_Title | Release_Date | Vote_Average | Vote_Count
+Everything Everywhere All at Once;2022-03-24; 7.928;3873
+John Wick: Chapter 4;2023-03-22;9.094;16
+Cocaine Bear;2023-02-22;6.706;260
+Noise;2023-03-17;6.1;13
+Scream VI;2023-03-08;7.394;302
+The Whale;2022-12-09;8.07;1384
+In His Shadow;2023-03-17;7.5;8
+Still Time;2023-03-16;7.0;28
+Shazam! Fury of the Gods;2023-03-15;7.54;89
+Barbie;2023-07-21;6.9;4321
+Beetlejuice;1988-09-06;5.4;3555
+
+Pick an option from below:
+
+(A)DD
+(R)EMOVE
+(P)RINT
+(F)IND
+(M)AX
+(Q)UIT
+
+Q
+
+Thank you so much for using my movie rating program! I hope you can watch one of these feature films soon :) 
+Struct Movie_Title_Data
+Data Member:
+char movieTitles [MAX] to hold the movie names, MAX = 100
+char releaseDate[MAX]; to store the release date in YYYY-MM-DD format
+double averageRating to store the average rating number by TMDB data
+int countVotes to hold the number of votes total for each movie 
+
+Main Program:
+When the program starts, it reads from one data file - movies.txt
+movies.txt has the names of all movie titles, release dates, average rating, and number of votes in it. The delimiter is a “;” with no spaces. Will think on this…
+The displayMenu function is called to display the menu
+The readOption function reads the option and gets the option (validated) by reference
+The function exeOption runs through a switch expression and calls the other functions vased on the option
+The menu loops until the user chooses to quit (typing “Q” or “q”)
+Data validation is done for menu choices and for all numbers
+When the user choose to quit, the data is written back to the same text file in the same format
+
+The other functions are described below:
+Then the menu is displayed - the options are to add a movie title, remove a movie title, print the list of movies, find a movie and the data associated, show the movie with the highest ratings (MAX option), and then Quit.
+
+Display the menu (displayMenu):
+This function displays the menu to the user:
+Pick an option from below:
+
+(A)DD
+(R)EMOVE
+(P)RINT
+(F)IND
+(M)AX
+(Q)UIT
+
+It does not take any parameters or return anything
+
+Read the option (readOption):
+This function takes a char variable by reference
+The function reads and validates the option from the user and returns it by reference
+
+Execute the options (exeOption):
+This function takes the char option variable
+It uses a switch expression to call the different functions based on the option:
+A or a - Add a movie
+R or r - Remove a movie and its data
+P or p - Prints the list of movies and their data
+F or f - Finds the movie by name
+M or m - Finds the movie with the highest ratings
+Q or q - Quits the program
+
+Load Movie Names:
+This function loads the movie names, release date, average rating, and number of votes/ratings total from the file movies.txt into the movie_data struct array
+The struct array and its count are passed by reference to the function
+The file is opened, checked for validity
+The movies titles are read from the file into the struct array called listMovies. Duplicate names are not checked.
+This function also loads the release date, average rating, and number of ratings/votes from the file movies.txt
+The data is maintained in an array of struct 
+The struct array and the count are passed by reference to the function
+The file is opened, checked for validity
+The movie title is read from the file, mathed with the name in the list and the corresponding release dates are then read from the file on the same line to the corresponding index in the 2-dim array
+The values are separated by semicolons, so the appropriate syntax is used to separate the data.
+
+Add a Movie from the user (addMovie):
+This function reads a movie name, release date, average rating, and num of ratings from the user and adds to the end of the arrays
+The struct array and the count are passed to the function by reference.
+Data validation for the numbers is done through another function.
+Duplicate building names are not checked.
+Count is incremented to reflect the new addition
+
+Remove a building from the list (removeMovie):
+This function reads an index from the user (a number)
+Make sure the index input is valid
+Shift and remove the row or record with that index
+Decrement the count by 1 to reflect the removal of a movie
+
+Find a Movie by Name (findMovie):
+This function reads a movie name from the user and searches for it in the arrays and if found, displays the information for the movie.
+The struct array and the count are passed to the function.
+Read the building name from the user inside the function.
+Use strstr to do partial comparison and see if the name exists. IF it does, print the info and break out of the loop.
+Else, output a message saying “Movie not found. Please try again.”
+
+Finds the movie with the highest rating:
+This function finds the movie with the highest rating
+The struct array and the count are passed to the function.
+Set a maxRating to the first rating value in the array.
+Go through a loop and compare the annual use values in the array to the maxRating value.
+If a value is larger than the maxRating value, set the maxRating value to the value in the array.
+Mark the corresponding index value in maxIndex and continue the process through the entire array
+Mark the corresponding index value in maxIndex and continue the process through the entire array
+When you get to the end of the array, print the values corresponding to the maxIndex, and that will be the row with the maximum annual use.
+
+Print Data (printData):
+Go through a loop, and print the contents of the array to the same text file - movies.txt
+The data is separated by “;”, not formatted with any manipulators.
+
+Print Data (printData) [overloaded function to print to file]:
+Go through a loop, and print the contents of the array to the same text file - movies.txt
+The data is separated by ‘;’, not formatted with any manipulators
+
+Validate a Number (validateNum):
+Output a prompt, read a number from teh user
+Check for validity - that it is a positive, whole numbers, and stay in a lopo until a valid number is entered
+Return the number when it is valid
+
