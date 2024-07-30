@@ -5,6 +5,7 @@
 .
 .
 READ THIS INSTEAD: https://github.com/gfergusonQA/Cplusplus_Programs/blob/main/CS162/A03/algo-design.txt
+WHICH IS A BETTER SUMMARY OF ORIGINAL ASSIGNMENT DOC: https://github.com/gfergusonQA/Cplusplus_Programs/blob/main/CS162/A03/A03-Dynamic-Memory-Doc.pdf
 .
 .
 .
