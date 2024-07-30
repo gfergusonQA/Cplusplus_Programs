@@ -1,0 +1,10 @@
+Data Modeler;FT;147100;0
+Research Engineer;FT;275000;0
+Data Analyst;FT;105380;0
+Data Quality Analyst;FT;100000;100
+ML Engineer;CT;25500;100
+Data Analyst;CT;90000;100
+Data Operations Eng;FT;100000;100
+Applied Scientist;FT;213660;0
+Business Intelligence;FT;225000;0
+Computer Vision Engineer;FT;215000;0

@@ -1,0 +1,58 @@
+SAMPLE RUN 
+
+Number of integers: 8 
+Enter the values: 5 6 7 4 3 2 1 0
+Enter start and end index: 0 2
+
+
+Number of integers: 6 
+Enter the values: 1 2 3 4 5 2
+Enter start and end index: 2 5
+
+------------------------------------------
+
+DESIGN
+
+a) Input 
+numberOfIntegers, start, end as integers
+
+b) Output
+false, true
+
+
+c) Calculation
+for (int i = start; i < end; i++) {
+  if (userNum[i] > userNum[i + 1]) {
+    return false;
+  }
+}
+return true;
+
+d) Pseudocode
+FUNCTION Ascending(userNum[], start, end):
+    FOR i FROM start TO end - 1:
+        IF userNum[i] > userNum[i + 1]:
+            RETURN false
+    RETURN true
+
+# Main program
+FUNCTION main():
+    DECLARE numberOfIntegers as int 
+    DECLARE userNum[CAP] as int array
+    DECLARE start as int
+    DECLARE end as int
+
+    DISPLAY "Number of integers: "
+    DISPLAY numberOfIntegers
+
+    DISPLAY "Enter integer: "
+    FOR j FROM 0 TO numberOfIntegers - 1:
+        INPUT userNum[j]
+
+    OUTPUT "Enter start and end index: "
+    INPUT start, end
+
+    IF CALL Ascending(userNum, start, end):
+        OUTPUT "yes"
+    ELSE:
+        OUTPUT "no"

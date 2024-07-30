@@ -1,0 +1,135 @@
+// NOTE: This template is to be used for partner practice ONLY! You must
+// use the required Algorithmic Design Document for all Assignments.
+
+SAMPLE RUN:
+
+How many numbers do you want to enter? 6
+Enter numbers of integers: 2 4 6 8 10 12
+Enter position to shift from: 4
+Your list after shifting:
+10 12 2 4 6 8
+
+How many numbers do you want to enter? 6
+Enter numbers of integers: 2 4 6 8 10 12
+Enter position to shift from: 2
+Your list after shifting:
+6 8 10 12 2 4
+
+===========================================================
+DESIGN:
+
+a) Inputs
+count (int): Used to store the number of elements the user wants to enter. It is input by the user in the Validation function.
+
+list (int array):Array used to store the list of integers entered by the user. The user provides these integers in the readList function.
+
+pos (int): Represents the position from which the array elements will be shifted. It is entered by the user in the main function.
+
+Validation(int &num): Takes an integer reference as a parameter and reads the user's input for the count. It validates the input to ensure it is a non-negative integer.
+
+readList(int list[], int &count): Takes an integer array and an integer reference as parameters. Reads the list of integers entered by the user and stores them in the array.
+
+-----------------------------------------------------------
+b) Outputs
+ShiftingArrayToFront(int list[], int count, int pos):
+Takes an integer array, an integer representing the count of elements, and an integer for the position as parameters. Shifts the array elements to the right based on the specified position.
+
+PrintArray(int list[], int count):
+Takes an integer array and an integer representing the count of elements as parameters. Prints the elements of the array.
+
+-----------------------------------------------------------
+c) Calculations
+
+count - pos: subtracts position of element from the entire
+            count of elements in the array
+list[count - 1]: ensures that we don't hit an error on the
+        last element of the array
+list[j - 1]: copies the element to the right
+
+-----------------------------------------------------------
+d) Pseudocode
+
+DECLARE const int MAX = 100
+
+FUNCTION void
+  Validation(int &num)
+END FUNCTION
+
+FUNCTION void
+  readList(int list[], int &count)
+END FUNCTION
+
+FUNCTION void
+  ShiftingArrayToFront(int list[], int count, int pos)
+END FUNCTION
+
+FUNCTION void
+  PrintArray(int list[], int count)
+END FUNCTION
+
+FUNCTION int
+  main()
+  DECLARE list[MAX] is 0
+  DECLARE COUNT is 0
+  DECLARE pos is 0
+
+  DISPLAY "How many numbers do you want to enter? "
+  CALL Validation(count)
+
+  DISPLAY "Enter numbers of integers: "
+  CALL readList(list, count)
+
+  DISPLAY "Enter position to shift from: "
+  INPUT pos
+  CALL ShiftingArrayToFront(list, count, pos)
+
+  DISPLAY "Your list after shifting: "
+  DISPLAY - new line
+  CALL PrintArray(list, count)
+END FUNCTION main()
+
+CALL Validation(int &num)
+  INPUT num
+  WHILE (!cin or num < 0)
+    DISPLAY invalid message
+    clear input buffer
+    INPUT num
+  END WHILE
+  clear input buffer
+END FUNCTION Validation()
+
+CALL readList(int list[], int &count)
+  DECLARE int i = 0
+
+  FOR i = 0, i < count; i++
+    INPUT list[i]
+  END FOR LOOP
+  clear input buffer
+END FUNCTION readList()
+
+CALL ShiftingArrayToFront(int list[], int count, int pos)
+  DECLARE temp = 0
+  DECLARE i = 0
+  DECLARE j = 0
+
+  FOR i = 0; i < count - pos; i++
+    SET temp = list[count -1]
+  END FOR LOOP
+
+  FOR j = count - 1; j > 0; j--
+    SET list[j] to list[j - 1]
+  END FOR LOOP
+
+  SET list[0] to temp
+END FUNCTION ShiftingArrayToFront()
+
+CALL PrintArray(int list[], int count)
+  DECLARE i = 0
+
+  FOR i = 0; i < count; i++
+    DISPLAY list[i] + " "
+  END FOR LOOP
+
+  DISPLAY new line
+
+  END PROGRAM
