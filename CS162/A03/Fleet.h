@@ -14,6 +14,7 @@ private:
 
 public:
     Fleet(); // Default constructor.
+    ~Fleet(); // Destructor
     Fleet(const Fleet &) = delete;
     // below is overloaded operator 
     Fleet & operator=(const Fleet &) = delete;

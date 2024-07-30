@@ -15,6 +15,15 @@ Fleet::Fleet() {
         loadPlanes();
 }
 
+// Function: Fleet::Fleet()
+// Description: Fleet Destructor
+// Inputs: 
+// Outputs: 
+// Return: 
+~Fleet::Fleet() {
+    delete[] fleetAirplanes;
+}
+
 // Function: Fleet::growArray()
 // Description: 
 // Inputs: 
