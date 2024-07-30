@@ -1,3 +1,20 @@
+.
+.
+.
+.
+.
+.
+READ THIS INSTEAD: https://github.com/gfergusonQA/Cplusplus_Programs/blob/main/CS162/A03/algo-design.txt
+.
+.
+.
+.
+.
+.
+.
+.
+
+
 // INSTRUCTIONS: //
 
 After completing this code, you will be able to: 
