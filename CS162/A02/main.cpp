@@ -27,13 +27,19 @@ using namespace std;
 int main() {
     Fleet myFleet;
     bool success;
+    // int count = 0; // *NEW*
 
+    welcome();
+    
     // Initial loading of planes from file
     if(!myFleet.openTheFile()){
-        cout << "\nQuitting the program since the file didn't open."<<endl;
+        cout << "\nQuitting the program since the file didn't open." << endl;
     }
     else {
+    // Count doesn't work because loadPlanes has 0 arguments
     myFleet.loadPlanes();
+    // cout << endl << count << " planes were loaded from the file.\n";
+    myFleet.printPlanes();
     
     char option;
     do {

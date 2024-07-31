@@ -10,16 +10,16 @@ private:
     ifstream inFile;
     Airplane fleetAirplanes[ARR_SIZE];
     Airplane tempPlane; // Temporary storage for inserting a plane
-    bool insert(); // private method without arguments
+    bool insert();      // private method without arguments
 public:
-    Fleet();
+    Fleet();            // Default Constructor
     int loadPlanes();
     void printPlanes();
     void listByMake();
     bool addAPlane();
     bool removeAPlane();
     void writePlanes();
-    bool openTheFile(); // ADDED BY GM, encapsulated now, no longer need arguments
+    bool openTheFile();
 };
 
 #endif // FLEET_H

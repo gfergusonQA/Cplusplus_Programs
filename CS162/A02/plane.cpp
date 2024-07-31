@@ -1,3 +1,9 @@
+/*
+#******************************************************************************
+// Neither comments nor code should be wider than 79 characters.
+// The lines of asterisks above are 79 characters long for easy reference. 
+*/
+
 #include "plane.h"
 
 Airplane::Airplane() {

@@ -1,7 +1,19 @@
+/*
+#******************************************************************************
+// Neither comments nor code should be wider than 79 characters.
+// The lines of asterisks above are 79 characters long for easy reference. */
+
 #include "fleet.h"
 #include "tools.h"
 
-Fleet::Fleet() : count(0) {
+//Name: Fleet:Fleet() CONSTRUCTOR
+//Desc: This is the constructor for Fleet, initialized with an empty string in
+//      order to prevent garbage data for fileName, and make sure its clear.
+//Input: 
+//Output: 
+//Return: 
+Fleet::Fleet() {
+    count = 0;
     strcpy(fileName, "");
 }
 
@@ -12,9 +24,6 @@ Fleet::Fleet() : count(0) {
 //return: success (bool), starts as false, returns true if file opens
 bool Fleet::openTheFile() {
     bool success = false;
-    char fileName[STR_SIZE];
-    cout << "Welcome to the airplane collection program!\n"
-        "\nWhat is the name of the airplane collection file? ";
     cin.getline(fileName, STR_SIZE);
     inFile.open(fileName);
 
@@ -37,40 +46,51 @@ bool Fleet::openTheFile() {
 //return: result (boolean): begins as false, returns true if there's a match
 bool Fleet::insert() {
     bool result = false;
+    int index = 0;
+    
+    // Limit is 20
     if (count < ARR_SIZE) {
-    int index;
+
+    // Part 1: If the tempPlane model is greater than 0, 
+    //         (tempPlane model is alphabetically after 
+    //         fleetAirplanes), then we break out of the loop.
     for (index = 0; index < count; ++index) {
-        if (strcmp(fleetAirplanes[index].getModel(), tempPlane.getModel()) > 0) {
+        if (strcmp(fleetAirplanes[index].getModel(), 
+            tempPlane.getModel()) > 0) {
             break;
         }
     }
+    // Part 2: Shift the array to the right
     for (int i = count; i > index; --i) {
         fleetAirplanes[i] = fleetAirplanes[i - 1];
     }
+    // Part 3: Insert the tempPlane into the array
     fleetAirplanes[index] = tempPlane;
     ++count;
     result = true;
     cout << endl;
-    cout << tempPlane.getModel() << " plane data was successfully inserted." << endl;
+    cout << "--> " << tempPlane.getModel() << " plane data was successfully inserted.";
     }
-    return result;
+    return result; // if true in loadPlanes() hops out of loop, closes file
 }
 
 //Name:   loadPlanes()
-//Desc:   Loads planes using tempPlane array, and uses setter functions to insert each section
+//Desc:   Loads planes using tempPlane array, and uses 
+//        setter functions to insert each section
 //input:  line (array), setters return make, model, etc
 //output: none
 //return: return count (in the Fleet class)
 int Fleet::loadPlanes() {
     // File is already open
-    char line[STR_SIZE];
     double fuel = 0.0;
     int weight = 0;
     int hp = 0;
     int range = 0;
     int speed = 0;
+    int count = 0; // *NEW* 
+    bool result = false;
+    char line[STR_SIZE];
 
-    cout << endl;
     while (inFile.getline(line, STR_SIZE, ';')) {
         tempPlane.setModel(line);
         
@@ -97,11 +117,17 @@ int Fleet::loadPlanes() {
         inFile.ignore(1, '\n');
         tempPlane.setCruiseSpeed(speed);
 
-        insert();
+        // Insert the plane into the array
+        result = insert();
+        // Check for room
+        if(result == false) {
+            cout << "\nNot all planes were loaded from the file, "
+                    "out of room! " 
+                    "The program is now ending, please try again.\n";
+            break;
+        }
     }
-
     inFile.close();
-    cout << endl;
     return count;
 }
 
@@ -111,27 +137,36 @@ int Fleet::loadPlanes() {
 //output: prompt
 //return: string name
 void Fleet::printPlanes() {
-    cout << setw(20) << left << "\nModel"
-         << setw(15) << left << "Make"
-         << setw(15) << left << "Fuel Capacity"
-         << setw(15) << left << "Empty Weight"
-         << setw(15) << left << "Horsepower"
-         << setw(15) << left << "Range"
-         << setw(15) << left << "Cruise speed" << endl;
-    cout << "-----------------------------------------------------------------------------------------------------" << endl;
+    // Print the header
+    cout << endl; // Need an extra line
+    cout << endl;
+    cout << right << setw(4) << "" // Empty space for the index column
+         << left << setw(22) << "Model"
+         << left << setw(15) << "Make"
+         << right << setw(6) << "Fuel"
+         << right << setw(9) << "Weight"
+         << right << setw(5) << "HP"
+         << right << setw(7) << "Range"
+         << right << setw(9) << "Speed" << endl;
 
+    // Print a separator line
+    for (int i = 0; i < 76; ++i) {
+        cout << '-';
+    }
+    cout << endl;
+
+    // Print the planes
     for (int i = 0; i < count; ++i) {
-        cout << i + 1 << ". "
-             << setw(20) << left << fleetAirplanes[i].getModel()
-             << setw(15) << left << fleetAirplanes[i].getMake()
-             << setw(15) << left << fleetAirplanes[i].getMaxFuel()
-             << setw(15) << left << fleetAirplanes[i].getEmptyWeight()
-             << setw(15) << left << fleetAirplanes[i].getEngineHP()
-             << setw(15) << left << fleetAirplanes[i].getMaxRange()
-             << setw(15) << left << fleetAirplanes[i].getCruiseSpeed() << endl;
+        cout << right << setw(2) << i + 1 << ". "
+             << left << setw(22) << fleetAirplanes[i].getModel()
+             << left << setw(15) << fleetAirplanes[i].getMake()
+             << right << setw(6) << fleetAirplanes[i].getMaxFuel()
+             << right << setw(9) << fleetAirplanes[i].getEmptyWeight()
+             << right << setw(5) << fleetAirplanes[i].getEngineHP()
+             << right << setw(7) << fleetAirplanes[i].getMaxRange()
+             << right << setw(9) << fleetAirplanes[i].getCruiseSpeed() << endl;
     }
 }
-
 
 //Name:   listByMake()
 //Desc:   Printing out the fleetAirplanes array by all categories
@@ -140,32 +175,42 @@ void Fleet::printPlanes() {
 //return: none
 void Fleet::listByMake() {
     char make[STR_SIZE];
-    cout << "\nPlease type the make of the airplanes you would like to list: ";
+    cout << "\nPlease type the make of the airplanes you would "
+            "like to list: ";
     cin.getline(make, STR_SIZE);
 
-    cout << setw(20) << left << "\nModel"
-         << setw(15) << left << "Make"
-         << setw(15) << left << "Fuel Capacity"
-         << setw(15) << left << "Empty Weight"
-         << setw(15) << left << "Horsepower"
-         << setw(15) << left << "Range"
-         << setw(15) << left << "Cruise speed" << endl;
-    cout << "-----------------------------------------------------------------"
-	    "------------------------------------" << endl;
+    // Print the header
+    cout << endl; // Need an extra line for format
+    cout << right << setw(4) << "" // Empty space for the index column
+             << left << setw(22) << "Model"
+             << left << setw(15) << "Make"
+             << right << setw(6) << "Fuel"
+             << right << setw(9) << "Weight"
+             << right << setw(5) << "HP"
+             << right << setw(7) << "Range"
+             << right << setw(9) << "Speed" << endl;
 
-    for (int i = 0; i < count; ++i) {
-        if (strcmp(fleetAirplanes[i].getMake(), make) == 0) {
-            cout << i + 1 << ". "
-                 << setw(20) << left << fleetAirplanes[i].getModel()
-                 << setw(15) << left << fleetAirplanes[i].getMake()
-                 << setw(15) << left << fleetAirplanes[i].getMaxFuel()
-                 << setw(15) << left << fleetAirplanes[i].getEmptyWeight()
-                 << setw(15) << left << fleetAirplanes[i].getEngineHP()
-                 << setw(15) << left << fleetAirplanes[i].getMaxRange()
-                 << setw(15) << left << fleetAirplanes[i].getCruiseSpeed() << endl;
+        // Print a separator line
+        for (int i = 0; i < 77; ++i) {
+            cout << '-';
+        }
+        cout << endl;
+
+        // Print the planes
+        for (int i = 0; i < count; ++i) {
+            if (strcmp(fleetAirplanes[i].getMake(), make) == 0) {
+                cout << right << setw(2) << i + 1 << ". "
+                     << left << setw(22) << fleetAirplanes[i].getModel()
+                     << left << setw(15) << fleetAirplanes[i].getMake()
+                     << right << setw(6) << fleetAirplanes[i].getMaxFuel()
+                     << right << setw(9) << fleetAirplanes[i].getEmptyWeight()
+                     << right << setw(5) << fleetAirplanes[i].getEngineHP()
+                     << right << setw(7) << fleetAirplanes[i].getMaxRange()
+                     << right << setw(9) << fleetAirplanes[i].getCruiseSpeed() 
+                     << endl;
+            }
         }
     }
-}
 
 //Name:   addAPlane()
 //Desc:   Fleet array constructor to add a plane to the database 
@@ -193,7 +238,8 @@ bool Fleet::addAPlane() {
         cin.clear();
 
         cin.ignore(INT_MAX, '\n');
-        cout << "Please enter a decimal number for fuel capacity between 1.00 and 150.00: ";
+        cout << "Please enter a decimal number for fuel capacity between "
+                "1.00 and 150.00: ";
         cin >> dVal;
     }
     plane.setMaxFuel(dVal);
@@ -259,7 +305,8 @@ bool Fleet::removeAPlane() {
     while (cin.fail() || index < 1 || index > count) {
         cin.clear();
         cin.ignore(INT_MAX, '\n');
-        cout << "Invalid Index. Please type an index between 1 and " << count << ": ";
+        cout << "Invalid Index. Please type an index between 1 and " << 
+                count << ": ";
         cin >> index;
     }
     index--; // Convert to 0-based index

@@ -14,7 +14,5 @@ const int ARR_SIZE = 100;
 
 void welcome();
 
-// bool openTheFile(ifstream & inFile);
-// REMOVED by GM
 
 #endif // TOOLS_H
