@@ -200,7 +200,7 @@ void printPlanes(Airplane planes[], int count) {
     << right << setw(13) << "Fuel Capacity" 
     << right << setw(15) << "Empty Weight" 
     << right << setw(15) << "Horsepower" 
-    << right << setw(15) << "Range" 
+    << right << setw(15) << "Range"
     << right << setw(16) << "Cruise Speed\n" 
     << endl;
   

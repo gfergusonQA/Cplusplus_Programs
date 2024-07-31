@@ -1,0 +1,189 @@
+What would you like to do?
+(A)dd a plane
+(L)ist all planes
+(R)emove a plane by index
+(S)earch for a plane
+List all planes by (M)ake
+or (Q)uit?
+
+(User Input in Bold):
+Welcome to the airplane collection program. 
+
+What is the name of the airplane collection file? notAFile.txt
+
+notAFile.txt was not found. Try again or type 'quit' to exit the program.
+
+What is the name of the airplane collection file? planes.txt
+
+13 planes were loaded from the file.
+
+     Model              Make      Fuel Capacity   Empty Weight   Horsepower   Range     Cruise speed
+-----------------------------------------------------------------------------------------------------
+1 .  152                Cessna           26.00         1081         110         414         106
+2 .  360                Lancair          43.00         1090         180         990         208
+3 .  C23 Sundowner      Beechcraft       57.00         1494         180         564         115
+4 .  K35 Bonanza        Beechcraft       70.00         1832         250         534         168
+5 .  M20R Ovation.      Mooney           89.00         2205         280         969         189
+6 .  RV-12              Vans Aircraft    20.00          750         100         451         119
+7 .  RV-9               Vans Aircraft    36.00         1057         160         616         163
+8 .  RangeMaster H      Navion           40.00         1945         330        1381         160
+9 .  Skyhawk 172        Cessna           53.00         1663         180         515         123
+10.  Super Cub          Piper            36.00          845         125         449          96
+11.  TB-21 GT Trinidad  Socata           88.00         1911         250        1025         168
+12.  Tiger              Grumman          51.00         1360         180         529         139
+13.  Tomahawk           Piper            30.00         1128         112         383         107  
+
+What would you like to do?
+(A)dd a plane
+(L)ist all planes
+(R)emove a plane by index
+(S)earch for a plane
+List all planes by (M)ake
+or (Q)uit?
+A
+
+What is the model (name) of the airplane? Malibu Mirage
+What is the make (manufacturer) of the airplane? Piper
+What is the fuel capacity in gallons? One hundred and twenty
+Invalid input. Please enter a valid fuel capacity between  1.00 and 150.00: 120.00
+What is the empty weight (in pounds)? 20500
+Invalid input. Please enter a valid weight between 1 and 3000 pounds: 2435
+What is the horsepower of the engine? 550
+Invalid input. Please enter a valid horsepower between 1 and 400: 350
+What is the range? 1342 
+What is the cruise speed? 212
+
+Successfully added Malibu Mirage plane to the database.
+
+What would you like to do?
+(A)dd a plane
+(L)ist all planes
+(R)emove a plane by index
+(S)earch for a plane
+List all planes by (M)ake
+or (Q)uit?
+S
+
+For what airplane would you like to search (by model name)?  Boeing 777
+
+The airplane with model name BOEING 777 was not found in the database.
+
+What would you like to do?
+(A)dd a plane
+(L)ist all planes
+(R)emove a plane by index
+(S)earch for a plane
+List all planes by (M)ake
+or (Q)uit?
+S
+
+For what airplane would you like to search (by model name)?  Tiger
+Information on the Tiger is as follows:
+Make: Grumman, Fuel Capacity: 51.00, Empty weight: 1360, Horsepower: 180, Range: 529, Cruise speed: 139
+
+What would you like to do?
+(A)dd a plane
+(L)ist all planes
+(R)emove a plane by index
+(S)earch for a plane
+List all planes by (M)ake
+or (Q)uit?
+L
+
+     Model              Make      Fuel Capacity   Empty Weight   Horsepower   Range     Cruise speed
+-----------------------------------------------------------------------------------------------------
+1 .  152                Cessna           26.00         1081         110         414         106
+2 .  360                Lancair          43.00         1090         180         990         208
+3 .  C23 Sundowner      Beechcraft       57.00         1494         180         564         115
+4 .  K35 Bonanza        Beechcraft       70.00         1832         250         534         168
+5 .  M20R Ovation       Mooney           89.00         2205         280         969         189
+6 .  Malibu Mirage      Piper           120.00         2435         350        1342         212
+7 .  RV-12              Vans Aircraft    20.00          750         100         451         119
+8 .  RV-9               Vans Aircraft    36.00         1057         160         616         163
+9 .  RangeMaster H      Navion           40.00         1945         330        1381         160
+10.  Skyhawk 172        Cessna           53.00         1663         180         515         123
+11.  Super Cub          Piper            36.00          845         125         449          96
+12.  TB-21 GT Trinidad  Socata           88.00         1911         250        1025         168
+13.  Tiger              Grumman          51.00         1360         180         529         139
+14.  Tomahawk           Piper            30.00         1128         112         383         107
+
+What would you like to do?
+(A)dd a plane
+(L)ist all planes
+(R)emove a plane by index
+(S)earch for a plane
+List all planes by (M)ake
+or (Q)uit?
+M
+Please type the make of the airplanes you would like to list: Jabiru 
+There are no airplanes made by Jabiru in the database.
+
+What would you like to do?
+(A)dd a plane
+(L)ist all planes
+(R)emove a plane by index
+(S)earch for a plane
+List all planes by (M)ake
+or (Q)uit?
+M
+Please type the make of the airplanes you would like to list: Piper 
+The airplanes in the list made by Piper are:
+     Model              Make      Fuel Capacity   Empty Weight   Horsepower   Range     Cruise speed
+-----------------------------------------------------------------------------------------------------
+1 .  Malibu Mirage      Piper           120.00         2435         350        1342         212
+2 .  Super Cub          Piper            36.00          845         125         449          96
+3 .  Tomahawk           Piper            30.00         1128         112         383         107
+
+
+What would you like to do?
+(A)dd a plane
+(L)ist all planes
+(R)emove a plane by index
+(S)earch for a plane
+List all planes by (M)ake
+or (Q)uit?
+R
+Which index would you like to remove (1 – 14)? 0
+Invalid Index. Please type an index between 1 and 14: 15
+Invalid Index. Please type an index between 1 and 14: four
+Invalid Index. Please type an index between 1 and 14: 9
+Index 9 has been removed.
+
+What would you like to do?
+(A)dd a plane
+(L)ist all planes
+(R)emove a plane by index
+(S)earch for a plane
+List all planes by (M)ake
+or (Q)uit?
+L
+
+     Model              Make      Fuel Capacity   Empty Weight   Horsepower   Range     Cruise speed
+-----------------------------------------------------------------------------------------------------
+1 .  152                Cessna           26.00         1081         110         414         106
+2 .  360                Lancair          43.00         1090         180         990         208
+3 .  C23 Sundowner      Beechcraft       57.00         1494         180         564         115
+4 .  K35 Bonanza        Beechcraft       70.00         1832         250         534         168
+5 .  M20R Ovation       Mooney           89.00         2205         280         969         189
+6 .  Malibu Mirage      Piper           120.00         2435         350        1342         212
+7 .  RV-12              Vans Aircraft    20.00          750         100         451         119
+8 .  RV-9               Vans Aircraft    36.00         1057         160         616         163
+9 .  Skyhawk 172        Cessna           53.00         1663         180         515         123
+10.  Super Cub          Piper            36.00          845         125         449          96
+11.  TB-21 GT Trinidad  Socata           88.00         1911         250        1025         168
+12.  Tiger              Grumman          51.00         1360         180         529         139
+13.  Tomahawk           Piper            30.00         1128         112         383         107
+
+What would you like to do?
+(A)dd a plane
+(L)ist all planes
+(R)emove a plane by index
+(S)earch for a plane
+List all planes by (M)ake
+or (Q)uit?
+Q
+
+Database file updated. Terminating Program.
+
+
+
