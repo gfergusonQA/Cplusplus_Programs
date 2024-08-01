@@ -70,7 +70,7 @@ bool Fleet::insert() {
     result = true;
     cout << endl;
     cout << "--> " << tempPlane.getModel() << " plane data was "
-        "successfully inserted.";
+        "successfully inserted.\n";
     }
     return result; // if true in loadPlanes() hops out of loop, closes file
 }
@@ -196,8 +196,6 @@ void Fleet::listByMake() {
             cout << '-';
         }
         cout << endl;
-        cout << "\n\n\nFIXME:  Add 'The airplanes in the list made by "
-        "fleet.Airplanes[i].getMake() are: \n\n\n";
 
         // Print the planes that match the Make the user input
         for (int i = 0; i < count; ++i) {
@@ -214,6 +212,8 @@ void Fleet::listByMake() {
             }
         }
         cout << "\n\n\nFIXME:  remove printed menu if 0 planes!\n\n\n";
+        cout << "\n\n\nFIXME:  Add 'The airplanes in the list made by "
+        "fleet.Airplanes[i].getMake() are: \n\n\n";
     }
 
 //Name:   addAPlane()
