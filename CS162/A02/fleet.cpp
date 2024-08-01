@@ -332,8 +332,9 @@ bool Fleet::removeAPlane() {
 //return: none
 void Fleet::writePlanes() {
     char outputFileName[STR_SIZE];
-    cout << "Enter the name of the file to save airplane data: ";
+    cout << "\nEnter the name of the file to save airplane data: ";
     cin.getline(outputFileName, STR_SIZE);
+    cin.ignore(100, '\n');
 
     ofstream outFile(outputFileName);
     for (int i = 0; i < count; ++i) {
