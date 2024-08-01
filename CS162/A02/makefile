@@ -1,13 +1,13 @@
 CC = g++
 CPPFLAGS = -std=c++11 -g -Wall
 
-main: main.o item.o itemList.o
+main: main.o plane.o fleet.o
 
-main.o: main.h item.h itemList.h
+main.o: main.h plane.h fleet.h
 
-itemList.o: item.h itemList.h
+fleet.o: plane.h fleet.h
 
-item.o: item.h
+plane.o: plane.h
 
 clean: 
 	rm *.o main
