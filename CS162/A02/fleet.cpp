@@ -196,8 +196,8 @@ void Fleet::listByMake() {
             cout << '-';
         }
         cout << endl;
-        cout << "FIXME:  Add 'The airplanes in the list made by "
-        "fleet.Airplanes[i].getMake() are: \n";
+        cout << "\n\n\nFIXME:  Add 'The airplanes in the list made by "
+        "fleet.Airplanes[i].getMake() are: \n\n\n";
 
         // Print the planes that match the Make the user input
         for (int i = 0; i < count; ++i) {
@@ -213,7 +213,7 @@ void Fleet::listByMake() {
                      << endl;
             }
         }
-        cout << "FIXME:  remove printed menu if 0 planes!";
+        cout << "\n\n\nFIXME:  remove printed menu if 0 planes!\n\n\n";
     }
 
 //Name:   addAPlane()
@@ -331,7 +331,11 @@ bool Fleet::removeAPlane() {
 //output: the fleetAirplanes array, using getter functions
 //return: none
 void Fleet::writePlanes() {
-    ofstream outFile(fileName);
+    char outputFileName[STR_SIZE];
+    cout << "Enter the name of the file to save airplane data: ";
+    cin.getline(outputFileName, STR_SIZE);
+
+    ofstream outFile(outputFileName);
     for (int i = 0; i < count; ++i) {
         outFile << fleetAirplanes[i].getModel() << ";"
                 << fleetAirplanes[i].getMake() << ";"
