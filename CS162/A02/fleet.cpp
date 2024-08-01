@@ -28,8 +28,8 @@ bool Fleet::openTheFile() {
     inFile.open(fileName);
 
     while(!inFile.is_open() && strcmp(fileName, "Q") != 0) {
-        cout << "\n*** The file " << fileName << " did not open. Type 'Q' to"
-            " quit, or try again now: ";
+        cout << "\n*** The file " << fileName << " was not found. "
+            "Try again or type 'quit' to exit the program: ";
         cin.getline(fileName, STR_SIZE);
         inFile.open(fileName);
     }
@@ -69,7 +69,8 @@ bool Fleet::insert() {
     ++count;
     result = true;
     cout << endl;
-    cout << "--> " << tempPlane.getModel() << " plane data was successfully inserted.";
+    cout << "--> " << tempPlane.getModel() << " plane data was "
+        "successfully inserted.";
     }
     return result; // if true in loadPlanes() hops out of loop, closes file
 }
@@ -87,7 +88,7 @@ int Fleet::loadPlanes() {
     int hp = 0;
     int range = 0;
     int speed = 0;
-    int count = 0; // *NEW* 
+    // Removed count *NOTE FOR LATER* local was breaking the function 
     bool result = false;
     char line[STR_SIZE];
 
@@ -128,7 +129,7 @@ int Fleet::loadPlanes() {
         }
     }
     inFile.close();
-    return count;
+    return count; // This count is correct & private in Fleet class
 }
 
 //Name:   printPlanes()
@@ -195,8 +196,10 @@ void Fleet::listByMake() {
             cout << '-';
         }
         cout << endl;
+        cout << "FIXME:  Add 'The airplanes in the list made by "
+        "fleet.Airplanes[i].getMake() are: \n";
 
-        // Print the planes
+        // Print the planes that match the Make the user input
         for (int i = 0; i < count; ++i) {
             if (strcmp(fleetAirplanes[i].getMake(), make) == 0) {
                 cout << right << setw(2) << i + 1 << ". "
@@ -210,6 +213,7 @@ void Fleet::listByMake() {
                      << endl;
             }
         }
+        cout << "FIXME:  remove printed menu if 0 planes!";
     }
 
 //Name:   addAPlane()
@@ -311,6 +315,9 @@ bool Fleet::removeAPlane() {
     }
     index--; // Convert to 0-based index
 
+    cout << "\n\n\nFIXME: Need to tell user which index # was removed to "
+            "confirm.\n\n\n";
+
     for (int i = index; i < count - 1; ++i) {
         fleetAirplanes[i] = fleetAirplanes[i + 1];
     }
@@ -334,5 +341,7 @@ void Fleet::writePlanes() {
                 << fleetAirplanes[i].getMaxRange() << ";"
                 << fleetAirplanes[i].getCruiseSpeed() << endl;
     }
+    cout << "\n\n\nFIXME: output file going incorrectly saving to "
+            "airplanes.txt.\n\n\n";
     outFile.close();
 }

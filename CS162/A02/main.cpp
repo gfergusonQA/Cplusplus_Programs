@@ -24,10 +24,19 @@
 
 using namespace std; 
 
+/* To Run program: 
+
+First compile (in terminal):
+    g++ -Wall -g -o output.txt *.cpp
+then run executable file:
+    ./output.txt
+
+ */
+
 int main() {
     Fleet myFleet;
     bool success;
-    // int count = 0; // *NEW*
+    int count = 0; // *NEW*
 
     welcome();
     
@@ -36,9 +45,9 @@ int main() {
         cout << "\nQuitting the program since the file didn't open." << endl;
     }
     else {
-    // Count doesn't work because loadPlanes has 0 arguments
-    myFleet.loadPlanes();
-    // cout << endl << count << " planes were loaded from the file.\n";
+    // Count works now!
+    count = myFleet.loadPlanes();
+    cout << endl << endl << count << " planes were loaded from the file.\n";
     myFleet.printPlanes();
     
     char option;
@@ -64,7 +73,7 @@ int main() {
                 // CHANGED
                 success = myFleet.addAPlane();
                 if(!success) {
-                    cout << "The new plane was not added. Out of room." << endl;
+                    cout << "\n\nThe new plane was not added. Out of room.\n\n";
                 }
                 break;
             case 'R':
@@ -72,10 +81,10 @@ int main() {
                 break;
             case 'Q':
                 myFleet.writePlanes();
-                cout << "\nData saved. Quitting the program." << endl;
+                cout << "\nDatabase file updated. Terminating program.\n\n";
                 break;
             default:
-                cout << "\nInvalid option. Please try again." << endl;
+                cout << "\nInvalid option. Please try again.\n";
         }
     } while (option != 'Q');
 
