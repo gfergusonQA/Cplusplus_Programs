@@ -1,8 +1,9 @@
 # To run program:
 
-_COMPILE:_
+--> COMPILE:
 g++ -o main_program *.cpp
-_RUN PROGRAM:_
+
+--> RUN PROGRAM:
 ./main_program
 
 
