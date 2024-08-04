@@ -9,17 +9,17 @@ class Airplane {
 private:
     char * make;
     char * model;
-    double maxFuel;
-    int emptyWeight;
-    int engineHP;
-    int maxRange;
-    int cruiseSpeed;
+    double maxFuel;   // in gallons
+    int emptyWeight;  // in pounds
+    int engineHP;     // horsepower
+    int maxRange;     // nautical miles
+    int cruiseSpeed;  // knots
 
 public:
-    Airplane();
-    Airplane(const Airplane &);
-    ~Airplane();
-    Airplane & operator=(const Airplane &);
+    Airplane();                             // Default constructor.
+    Airplane(const Airplane &);             // Copy constructor.
+    ~Airplane();                            // Destructor.
+    Airplane & operator=(const Airplane &); // Copy assignment operator.
 
     // Getters
     const char * getMake();

@@ -5,14 +5,13 @@
 #include <fstream>
 #include <cstring>
 
-#include "Fleet.h"
-
 using namespace std;
 
 const int STR_SIZE = 100;
 
+void welcome();
 void displayMenu();
-bool validateInput(const char* input, float& value);
-bool validateInput(const char* input, int& value);
+bool validateInput(double &value, double min, double max);
+bool validateInput(int &value, int min, int max);
 
 #endif // TOOLS_H

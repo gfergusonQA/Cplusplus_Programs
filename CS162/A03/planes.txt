@@ -1,7 +1,7 @@
 360;Lancair;43.00;1090;180;990;208
 Skyhawk 172;Cessna;53.00;1663;180;515;123
 K35 Bonanza;Beechcraft;70.00;1832;250;534;168
-RangeMaster H;Navion;40.00;1945;330;1381;160 
+RangeMaster H;Navion;40.00;1945;330;1381;160
 Tomahawk;Piper;30.00;1128;112;383;107
 M20R Ovation;Mooney;89.00;2205;280;969;189
 C23 Sundowner;Beechcraft;57.00;1494;180;564;115
@@ -11,4 +11,3 @@ RV-9;Vans Aircraft;36.00;1057;160;616;163
 152;Cessna;26.00;1081;110;414;106
 Tiger;Grumman;51.00;1360;180;529;139
 Super Cub;Piper;36.00;845;125;449;96
-

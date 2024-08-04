@@ -1,7 +1,10 @@
 #ifndef FLEET_H
 #define FLEET_H
 
-#include "Airplane.h"
+#include "tools.h"
+#include "airplane.h"
+
+using namespace std;
 
 class Fleet {
 private:
@@ -10,25 +13,22 @@ private:
     int count;
     int capacity;
     Airplane * fleetAirplanes;
-    bool insert(); // private method.
-
+    bool insert();
 public:
-    Fleet(); // Default constructor.
-    ~Fleet(); // Destructor
-    Fleet(const Fleet &) = delete;
-    // below is overloaded operator 
-    Fleet & operator=(const Fleet &) = delete;
+    Fleet();                       // Default constructor.
+    ~Fleet();                      // Destructor.
+    Fleet(const Fleet &) = delete; // Deletes the Copy constructor (prevents copying)
+    Fleet &operator=(const Fleet &) = delete; // Deletes Copy assignment operator 
+                                   // (also prevents compiler from generating a copy 
+                                   // assign. op.) also prevents copying
     int loadPlanes();
     void printPlanes();
     void listByMake();
+    void search();
     bool addAPlane();
     bool removeAPlane();
     void writePlanes();
     void growArray();
-    void searchAirplaneByModel(); // confirmed by teacher
-
-    // New public member functions ( I couldn't get it to work otherwise)
-    const char* getFileName() const;
     bool openTheFile();
 };
 
