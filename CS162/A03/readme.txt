@@ -1,3 +1,11 @@
+# To run program:
+
+_COMPILE:_
+g++ -o main_program *.cpp
+_RUN PROGRAM:_
+./main_program
+
+
 .
 .
 .
